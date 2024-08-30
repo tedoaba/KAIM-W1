@@ -27,24 +27,3 @@ def split_date_columns(data):
     return data
 
 
-def get_basic_info(data):
-    print(data.shape)
-    print(data.info())
-    print("Missing values:\n", data.isnull().sum())
-    print("Number of duplicates: ", data.duplicated().sum())
-
-def get_unique_counts(data):
-    print("Number of stocks: ", len(data['stock'].unique()))
-    print("Number of publishers: ", len(data['publisher'].unique()))
-    print("Number of urls: ", len(data['url'].unique()))
-    print("Number of dates: ", len(data['date'].unique()))
-    print("Number of headline: ", len(data['headline'].unique()))
-
-def split_date_columns(data):
-    data['year'] = data['date'].dt.year
-    data['month'] = data['date'].dt.month
-    data['day'] = data['date'].dt.day
-    data['hour'] = data['date'].dt.hour
-    data['minute'] = data['date'].dt.minute
-    data['second'] = data['date'].dt.second
-    return data

@@ -1,14 +1,18 @@
-from src. data_loading import load_data, preprocess_data
-from src.data_analysis import get_basic_info, get_unique_counts, split_date_columns
+import sys
+import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
+from src.data_loading import load_data, preprocess_data
+from src.data_analysis import get_basic_info, get_unique_counts, split_date_columns, calculate_headline_length
 from src.text_processing import clean_headlines, get_common_words, word_frequency_over_years
 from src.sentiment_analysis import add_sentiment, get_top_headlines
 from src.data_visualization import (
     plot_top_publishers, plot_article_distribution_by_year, 
-    plot_sentiment_distribution, plot_top_headlines, plot_word_frequencies_over_years
+    plot_sentiment_distribution, plot_top_headlines, plot_word_frequencies_over_years, plot_monthly_publications
 )
 
 # Load and preprocess the data
-filepath = '/kaggle/input/kaim-w1/raw_analyst_ratings/raw_analyst_ratings.csv'
+filepath = 'C:/Users/tedoa/KAIM-W1/data/raw_analyst_ratings.csv'
 data = load_data(filepath)
 data = preprocess_data(data)
 
@@ -19,28 +23,6 @@ headline_stats = calculate_headline_length(data)
 print("Headline length statistics:\n", headline_stats)
 
 # Split date into components
-data = split_date_columns(data)
-
-# Visualize the data
-publisher_counts = data['publisher'].value_counts()
-plot_top_publishers(publisher_counts)
-plot_article_distribution_by_year(data)
-
-# Specify the year of interest
-year_of_interest = 2020
-plot_monthly_publications(data, year_of_interest)
-
-
-
-
-# Load and preprocess the data
-filepath = '/kaggle/input/kaim-w1/raw_analyst_ratings/raw_analyst_ratings.csv'
-data = load_data(filepath)
-data = preprocess_data(data)
-
-# Analyze the data
-get_basic_info(data)
-get_unique_counts(data)
 data = split_date_columns(data)
 
 # Clean headlines and analyze text
@@ -61,3 +43,8 @@ publisher_counts = data['publisher'].value_counts()
 plot_top_publishers(publisher_counts)
 plot_article_distribution_by_year(data)
 plot_word_frequencies_over_years(years, word_freq_per_year, [word for word, count in top_words])
+
+# Specify the year of interest
+year_of_interest = 2020
+plot_monthly_publications(data, year_of_interest)
+
