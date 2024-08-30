@@ -1,4 +1,5 @@
 import matplotlib.pyplot as plt
+import seaborn as sns
 
 def plot_top_publishers(publisher_counts):
     top_10_publishers = publisher_counts.head(10)
@@ -34,32 +35,6 @@ def plot_monthly_publications(data, year):
     plt.xticks(rotation=0)
     plt.grid(False)
     plt.savefig('Publication_distribution_year_2020.png')
-    plt.show()
-
-import matplotlib.pyplot as plt
-import seaborn as sns
-
-def plot_top_publishers(publisher_counts):
-    top_10_publishers = publisher_counts.head(10)
-    plt.figure(figsize=(10, 6))
-    top_10_publishers.plot(kind='bar')
-    plt.title('Top 10 Publishers by Number of Articles')
-    plt.xlabel('Publisher')
-    plt.ylabel('Number of Articles')
-    plt.xticks(rotation=45, ha='right')
-    plt.grid(False)
-    plt.savefig('top_10_publishers_by_number_of_articles.png')
-    plt.show()
-
-def plot_article_distribution_by_year(data):
-    plt.figure(figsize=(10, 6))
-    data['year'].hist(bins=30)
-    plt.title('Distribution of Articles Over the Years')
-    plt.xlabel('Year')
-    plt.ylabel('Frequency')
-    plt.xticks(rotation=45)
-    plt.grid(False)
-    plt.savefig('distribution_of_articles_over_the_years.png')
     plt.show()
 
 def plot_sentiment_distribution(data):
