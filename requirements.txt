@@ -6,3 +6,7 @@ nltk
 wordcloud
 numpy
 matplotlib
+pandas_ta
+pytest
+jupyter
+
