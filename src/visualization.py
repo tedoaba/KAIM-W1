@@ -22,9 +22,10 @@ def plot_daily_returns(daily_df):
     plt.show()
 
 def scatter_plot(daily_df):
-    plt.figure(figsize=(8, 6))
+    plt.figure(figsize=(14, 7))
     sns.scatterplot(data=daily_df, x='Average Sentiment', y='Daily Return', alpha=0.5)
     plt.title('Sentiment Score vs. Stock Returns')
     plt.xlabel('Average Sentiment Score')
     plt.ylabel('Daily Return (%)')
+    plt.legend()
     plt.show()
