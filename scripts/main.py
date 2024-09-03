@@ -1,14 +1,21 @@
-from src.data_loader import load_data
-from src.data_cleaner import clean_data
-from src.sentiment_analysis import analyze_sentiment
-from src.data_merger import merge_data
-from src.correlation_analysis import calculate_correlation
-from src.visualization import plot_daily_returns, scatter_plot
+import sys
+import os
+
+# Add src directory to the Python path
+src_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '../src'))
+sys.path.append(src_path)
+
+from data_loader import load_data
+from data_cleaner import clean_data
+from sentiment_analysis import analyze_sentiment
+from data_merger import merge_data
+from correlation_analysis import calculate_correlation
+from visualization import plot_daily_returns, scatter_plot
 
 def main():
     # Load data
-    apple = load_data('data/apple.csv')
-    news_df = load_data('data/news.csv')
+    apple = load_data('../data/apple.csv')
+    news_df = load_data('../data/news.csv')
 
     # Clean data
     apple = clean_data(apple, 'Date')
