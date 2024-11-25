@@ -1,6 +1,6 @@
-# KAIM Week 1 Challenges Report
+# Predictive Analytics through Sentiment and Correlation Analysis
 
-## Enhancing Predictive Analytics through Sentiment and Correlation Analysis at Nova Financial Solutions
+## KAIM Week 1 Challenges Report
 
 In the fast-paced world of finance, staying ahead of market trends is crucial. At Nova Financial Solutions, I undertook a comprehensive analysis of the Financial News and Stock Price Integration Dataset (FNSPID) to enhance our predictive analytics capabilities. My work focused on three key tasks: Exploratory Data Analysis (EDA), quantitative analysis using PyNance and TA-Lib, and correlation analysis between news sentiment and stock movements.
 
